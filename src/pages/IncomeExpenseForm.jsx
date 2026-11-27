@@ -38,6 +38,7 @@ function IncomeExpenseForm() {
             <option value="expense">Expense</option>
           </select>
         </div>
+        <br />
         <button>Add Entry</button>
       </form>
     </>
