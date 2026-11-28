@@ -5,7 +5,6 @@ import { useEffect } from "react";
 const Income = () => {
   const dispatch = useDispatch();
   const income = useSelector((state) => state.income || []);
-  console.log("Income from Redux:", income);
   const totalIncome = income.reduce(
     (acc, curr) => Number(curr.amount) + acc,
     0,

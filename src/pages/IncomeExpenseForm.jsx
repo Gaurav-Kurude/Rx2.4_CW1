@@ -12,8 +12,6 @@ function IncomeExpenseForm() {
   const handleAddEntry = (e) => {
     e.preventDefault();
 
-    console.log("Button clicked!");
-
     if (!description.trim() || !amount || Number(amount) <= 0) {
       alert("Please enter valid description and amount");
       return;
@@ -24,8 +22,6 @@ function IncomeExpenseForm() {
       amount: Number(amount),
       entryType,
     };
-
-    console.log("Entry submitted:", entry);
 
     if (entryType === "income") {
       dispatch(addEntry(entry));

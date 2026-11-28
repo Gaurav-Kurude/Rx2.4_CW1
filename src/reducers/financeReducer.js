@@ -25,7 +25,6 @@ const financeReducer = (state = initialState, action) => {
       };
 
     case "ADD_ENTRY_SUCCESS":
-      console.log("Reducer received:", action.payload);
 
       if (action.payload.entryType === "income") {
         return {

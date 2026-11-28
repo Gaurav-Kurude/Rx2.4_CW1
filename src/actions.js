@@ -1,8 +1,5 @@
 export const addEntry = (entry) => async (dispatch) => {
   try {
-    console.log("Income data being sent:", entry);
-    console.log("ADD INCOME CALLED");
-    console.log("Entry received:", entry);
 
     const response = await fetch(
       "https://finance-app-backend-Student-neoG.replit.app/add-income",
@@ -17,9 +14,6 @@ export const addEntry = (entry) => async (dispatch) => {
 
     const data = await response.json();
 
-    console.log("Income status:", response.status);
-    console.log("Income API response:", data);
-
     if (response.ok && data.success === true) {
       dispatch({
         type: "ADD_ENTRY_SUCCESS",
@@ -33,7 +27,6 @@ export const addEntry = (entry) => async (dispatch) => {
 
 export const addExpense = (entry) => async (dispatch) => {
   try {
-    console.log("Expense data being sent:", entry);
 
     const response = await fetch(
       "https://finance-app-backend-Student-neoG.replit.app/add-expense",
@@ -48,8 +41,6 @@ export const addExpense = (entry) => async (dispatch) => {
 
     const data = await response.json();
 
-    console.log("Response status:", response.status);
-    console.log("Expense API response:", data);
 
     if (response.ok && data.success === true) {
       dispatch({
@@ -72,8 +63,6 @@ export const fetchIncome = () => async (dispatch) => {
 
     const data = await response.json();
 
-    console.log("Income API response:", data);
-
     if (response.ok && data.success === true) {
       dispatch({
         type: "FETCH_INCOME_SUCCESS",
@@ -92,8 +81,6 @@ export const fetchExpenses = () => async (dispatch) => {
     );
 
     const data = await response.json();
-
-    console.log("Fetch Expenses Response:", data);
 
     if (response.ok && data.success === true) {
       dispatch({
