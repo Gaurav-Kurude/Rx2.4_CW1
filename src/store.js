@@ -1,6 +1,7 @@
 import { createStore, applyMiddleware } from "redux";
-import financeReducer from "./pages/reducers";
 import { thunk } from "redux-thunk";
+import financeReducer from "./reducers/financeReducer.js";
 
-const store = createStore(financeReducer, applyMiddleware());
+const store = createStore(financeReducer, applyMiddleware(thunk));
+
 export default store;
